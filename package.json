@@ -1,0 +1,31 @@
+{
+  "name": "quantum-trading-system",
+  "version": "13.0.0",
+  "description": "Enhanced Quantum Trading System - Elite Signal Generation & Swing Trade Analysis",
+  "main": "Quantum-world.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node Quantum-world.js",
+    "dev": "node Quantum-world.js",
+    "test": "echo \"Testing trading system...\" && node -c Quantum-world.js"
+  },
+  "keywords": [
+    "trading",
+    "quantum",
+    "signals",
+    "swing-trading",
+    "institutional",
+    "market-analysis"
+  ],
+  "author": "Quantum Trading Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/quantum-world.git"
+  }
+}
