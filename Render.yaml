@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: quantum-trading-system
+    runtime: node
+    plan: standard
+    
+    # Build Configuration
+    buildCommand: npm install
+    startCommand: npm start
+    
+    # Environment Variables (configure in Render Dashboard)
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        scope: runtime
+    
+    # Health Check Configuration (CRITICAL for Render)
+    healthCheckPath: /health
+    healthCheckInterval: 30
+    healthCheckTimeout: 10
+    healthCheckStartPeriod: 60
+    
+    # Auto-restart on crash
+    autoDeploy: true
+    
+    # Maximum instances
+    maxInstances: 1
+    
+    # Memory and CPU
+    numInstances: 1
+    
+    # Keep alive to prevent sleep
+    previewPlan: free
+
+# Crons (optional - for scheduled tasks)
+crons:
+  - id: uptimerobot-ping
+    schedule: "*/5 * * * *"
+    command: "curl -s $RENDER_EXTERNAL_URL/uptime || true"
+
+# Required for Render to properly deploy
+schemaVersion: 1
